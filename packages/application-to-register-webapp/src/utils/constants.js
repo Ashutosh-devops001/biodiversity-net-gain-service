@@ -2,6 +2,7 @@ const ABOUT = 'about'
 const ADD_GRID_REFERENCE = 'land/add-grid-reference'
 const ADD_HECTARES = 'land/add-hectares'
 const CHECK_LEGAL_AGREEMENT = 'land/check-legal-agreement-file'
+const LEGAL_AGREEMENT_TYPE = 'land/legal-agreement-type'
 const CHECK_MANAGEMENT_PLAN = 'land/check-management-plan-file'
 const CONFIRM_GEOSPATIAL_LAND_BOUNDARY = 'land/check-geospatial-land-boundary-file'
 const DOCUMENT_UPLOAD = 'documentUpload'
@@ -24,6 +25,7 @@ const GRID_REFERENCE_REGEX = /^([STNHOstnho][A-Za-z]\s?)(\d{5}\s?\d{5}|\d{4}\s?\
 const LEGAL_AGREEMENT_CHECKED = 'legal-agreement-checked'
 const LEGAL_AGREEMENT_FILE_SIZE = 'legal-agreement-file-size'
 const LEGAL_AGREEMENT_LOCATION = 'legal-agreement-location'
+const LEGAL_AGREEMENT_DOCUMENT_TYPE = 'legal-agreement-type'
 const LEGAL_AGREEMENT_UPLOAD_TYPE = 'legal-agreement'
 const MANAGEMENT_PLAN_CHECKED = 'management-plan-checked'
 const MANAGEMENT_PLAN_FILE_SIZE = 'management-plan-file-size'
@@ -52,7 +54,6 @@ const CHECK_UPLOAD_METRIC = 'land/check-metric-file'
 const METRIC_LOCATION = 'metric-file-location'
 const METRIC_FILE_SIZE = 'metric-file-size'
 const METRIC_UPLOAD_TYPE = 'metric-upload'
-
 const YES = 'yes'
 
 const confirmFileUploadOptions = {
@@ -98,6 +99,7 @@ const redisKeys = {
   LAND_BOUNDARY_HECTARES,
   LEGAL_AGREEMENT_CHECKED,
   LEGAL_AGREEMENT_LOCATION,
+  LEGAL_AGREEMENT_DOCUMENT_TYPE,
   LEGAL_AGREEMENT_FILE_SIZE,
   MANAGEMENT_PLAN_CHECKED,
   MANAGEMENT_PLAN_LOCATION,
@@ -113,6 +115,7 @@ const routes = {
   ADD_HECTARES,
   ERROR,
   CHECK_LEGAL_AGREEMENT,
+  LEGAL_AGREEMENT_TYPE,
   CHECK_MANAGEMENT_PLAN,
   CONFIRM_GEOSPATIAL_LAND_BOUNDARY,
   DOWNLOAD_LEGAL_AGREEMENT,
