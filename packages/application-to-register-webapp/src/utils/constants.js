@@ -3,6 +3,9 @@ const ADD_GRID_REFERENCE = 'land/add-grid-reference'
 const ADD_HECTARES = 'land/add-hectares'
 const CHECK_LEGAL_AGREEMENT = 'land/check-legal-agreement-file'
 const LEGAL_AGREEMENT_TYPE = 'land/legal-agreement-type'
+const LEGAL_AGREEMENT_FILE_OPTION = 'legal-agreement-file-option'
+const ADD_LEGAL_AGREEMENT_PARTIES = 'land/add-legal-agreement-parties'
+const LEGAL_AGREEMENT_START_DATE = 'land/legal-agreement-start-date'
 const CHECK_MANAGEMENT_PLAN = 'land/check-management-plan-file'
 const CONFIRM_GEOSPATIAL_LAND_BOUNDARY = 'land/check-geospatial-land-boundary-file'
 const DOCUMENT_UPLOAD = 'documentUpload'
@@ -126,6 +129,7 @@ const redisKeys = {
   LEGAL_AGREEMENT_LOCATION,
   LEGAL_AGREEMENT_DOCUMENT_TYPE,
   LEGAL_AGREEMENT_FILE_SIZE,
+  LEGAL_AGREEMENT_FILE_OPTION,
   MANAGEMENT_PLAN_CHECKED,
   MANAGEMENT_PLAN_LOCATION,
   MANAGEMENT_PLAN_FILE_SIZE,
@@ -149,6 +153,8 @@ const routes = {
   ERROR,
   CHECK_LEGAL_AGREEMENT,
   LEGAL_AGREEMENT_TYPE,
+  ADD_LEGAL_AGREEMENT_PARTIES,
+  LEGAL_AGREEMENT_START_DATE,
   CHECK_MANAGEMENT_PLAN,
   CHECK_LAND_BOUNDARY,
   CHECK_PROOF_OF_OWNERSHIP,
