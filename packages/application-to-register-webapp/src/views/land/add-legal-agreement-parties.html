@@ -12,15 +12,9 @@
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
                 <div data-module="moj-add-another">
-
-                    {{ govukFieldset({
-                        legend: {
-                            text: pageHeading,
-                            classes: "govuk-fieldset__legend--l",
-                            isPageHeading: true
-                        }
-                    }) }}
-                    <form method="post">
+                    <h1 class="govuk-heading-l" tabindex="-1">
+                        {{ pageHeading }}
+                    </h1>
                         {% if selectionCount == undefined %}
                             {% set  selectionCount = 1%}
                         {% endif %}
@@ -57,6 +51,7 @@
                                         isPageHeading: false
                                     }
                                 }) %}
+                    <form method="post">
                                     {{ govukInput({
                                         id: "organisation[" + i + "][organisationName]",
                                         name: "organisation[" + i + "][organisationName]",
@@ -75,8 +70,7 @@
                                         fieldset: {
                                             legend: {
                                                 text: "Role",
-                                                isPageHeading: true,
-                                                classes: "govuk-fieldset__legend--l"
+                                                classes: "govuk-fieldset__legend"
                                             }
                                         },
                                         hint: {
