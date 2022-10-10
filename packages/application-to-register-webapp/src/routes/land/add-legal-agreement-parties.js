@@ -1,6 +1,8 @@
 import constants from '../../utils/constants.js'
 
-function checkEmptySelection (organisations, request, organisationRoles) {
+const START_ID = '#organisation'
+
+function checkEmptySelection (organisations, request) {
   const partySelectioData = {
     organisationError: [],
     roleError: [],
@@ -14,12 +16,12 @@ function checkEmptySelection (organisations, request, organisationRoles) {
     if (request.payload[organisation] === '') {
       partySelectioData.organisationError.push({
         text: 'Enter the name of the legal party',
-        href: '#organisation[' + index + '][organisationName]',
+        href: START_ID + '[' + index + '][organisationName]',
         index
       })
       combinedError.push({
         text: 'Enter the name of the legal party',
-        href: '#organisation[' + index + '][organisationName]'
+        href: START_ID + '[' + index + '][organisationName]'
       })
       partySelectioData.hasError = true
     } else {
@@ -32,12 +34,12 @@ function checkEmptySelection (organisations, request, organisationRoles) {
     if (request.payload[organisationRole] === undefined) {
       partySelectioData.roleError.push({
         text: 'Select the role',
-        href: '#organisation[' + index + '][role]',
+        href: START_ID + '[' + index + '][role]',
         index
       })
       combinedError.push({
         text: 'Select the role',
-        href: '#organisation[' + index + '][role]'
+        href: START_ID + '[' + index + '][role]'
       })
       partySelectioData.hasError = true
     } else {
@@ -48,12 +50,12 @@ function checkEmptySelection (organisations, request, organisationRoles) {
           otherParty = ''
           partySelectioData.roleError.push({
             text: 'Other type of role cannot be left blank',
-            href: '#organisation[' + index + '][role]',
+            href: START_ID + '[' + index + '][role]',
             index
           })
           combinedError.push({
             text: 'Other type of role cannot be left blank',
-            href: '#organisation[' + index + '][role]'
+            href: START_ID + '[' + index + '][role]'
           })
         }
         roleDetails.otherPartyName = otherParty
@@ -108,12 +110,14 @@ function getRoleDetails (roleValue, indexValue) {
         other: true
       }
       break
+    default:
+      roleDetails = undefined
   }
   return roleDetails
 }
 
 const handlers = {
-  get: async (request, h) => {
+  get: async (_request, h) => {
     return h.view(constants.views.ADD_LEGAL_AGREEMENT_PARTIES, {
       otherPartyName: ''
     })
